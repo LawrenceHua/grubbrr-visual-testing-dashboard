@@ -1,0 +1,822 @@
+{
+  "metadata": {
+    "project": "GRUBBRR NGE Kiosk",
+    "totalBugs": 55,
+    "lastUpdated": "2026-02-18T12:37:50Z",
+    "testEnvironment": {
+      "url": "https://test.kiosk.nge.grubbrr.com/",
+      "accessCode": "shaky.hers.clock",
+      "kioskId": "NGE-TEST-001"
+    },
+    "automation": {
+      "lastTestRun": "2026-02-18T11:45:00Z",
+      "testRunDuration": "8m 32s",
+      "successRate": "78.2%",
+      "testsPassed": 43,
+      "testsFailed": 12,
+      "currentStatus": "idle",
+      "nextScheduledRun": "2026-02-18T14:00:00Z"
+    }
+  },
+  "bugs": [
+    {
+      "id": "NGE-001",
+      "title": "Order total not updating after item removal",
+      "description": "When removing an item from cart, the order total remains unchanged until page refresh",
+      "status": "fixed",
+      "priority": "high",
+      "category": "cart",
+      "createdDate": "2026-01-15",
+      "fixedDate": "2026-02-10",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-001-before.svg",
+        "after": "screenshots/fixed/NGE-001-after.svg"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-002",
+      "title": "Modifier selection not persisting",
+      "description": "Selected modifiers disappear when navigating between menu categories",
+      "status": "fixed",
+      "priority": "high",
+      "category": "modifiers",
+      "createdDate": "2026-01-16",
+      "fixedDate": "2026-02-12",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-002-before.svg",
+        "after": "screenshots/fixed/NGE-002-after.svg"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-003",
+      "title": "Payment screen timeout too short",
+      "description": "Payment screen times out after 30 seconds, causing transaction failures",
+      "status": "in-progress",
+      "priority": "critical",
+      "category": "payment",
+      "createdDate": "2026-01-18",
+      "assignedTo": "dev-team-alpha",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-003-before.svg",
+        "after": null
+      },
+      "testResult": "pending"
+    },
+    {
+      "id": "NGE-004",
+      "title": "Receipt printer alignment off",
+      "description": "Receipt text is cut off on the right side when printing",
+      "status": "fixed",
+      "priority": "medium",
+      "category": "printing",
+      "createdDate": "2026-01-20",
+      "fixedDate": "2026-02-08",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-004-before.svg",
+        "after": "screenshots/fixed/NGE-004-after.svg"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-005",
+      "title": "Touch response delay on category buttons",
+      "description": "Category buttons take 2-3 seconds to respond to touch input",
+      "status": "fixed",
+      "priority": "high",
+      "category": "ui-performance",
+      "createdDate": "2026-01-22",
+      "fixedDate": "2026-02-14",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-005-before.svg",
+        "after": "screenshots/fixed/NGE-005-after.svg"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-006",
+      "title": "Combo meal price calculation incorrect",
+      "description": "Combo discounts not applied when modifiers are added",
+      "status": "in-progress",
+      "priority": "high",
+      "category": "pricing",
+      "createdDate": "2026-01-25",
+      "assignedTo": "dev-team-beta",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-006-before.png",
+        "after": null
+      },
+      "testResult": "pending"
+    },
+    {
+      "id": "NGE-007",
+      "title": "Session expires during active order",
+      "description": "User session times out even while actively building an order",
+      "status": "pending",
+      "priority": "critical",
+      "category": "session",
+      "createdDate": "2026-01-28",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-008",
+      "title": "Nutritional info popup not accessible",
+      "description": "Nutritional information icon is too small and hard to tap",
+      "status": "pending",
+      "priority": "low",
+      "category": "accessibility",
+      "createdDate": "2026-01-30",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-009",
+      "title": "Card reader not detected on startup",
+      "description": "Card reader initialization fails intermittently on kiosk boot",
+      "status": "in-progress",
+      "priority": "critical",
+      "category": "hardware",
+      "createdDate": "2026-02-01",
+      "assignedTo": "hardware-team",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-009-before.png",
+        "after": null
+      },
+      "testResult": "failed"
+    },
+    {
+      "id": "NGE-010",
+      "title": "Order confirmation email not sending",
+      "description": "Email receipts fail to send when customer enters email address",
+      "status": "fixed",
+      "priority": "medium",
+      "category": "notifications",
+      "createdDate": "2026-02-02",
+      "fixedDate": "2026-02-15",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-010-before.png",
+        "after": "screenshots/fixed/NGE-010-after.png"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-011",
+      "title": "Menu images not loading on slow connection",
+      "description": "Placeholder shown instead of menu item images when connection is slow",
+      "status": "pending",
+      "priority": "medium",
+      "category": "images",
+      "createdDate": "2026-02-03",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-012",
+      "title": "Tax calculation wrong for split orders",
+      "description": "Tax is calculated on pre-split total instead of individual items",
+      "status": "in-progress",
+      "priority": "high",
+      "category": "pricing",
+      "createdDate": "2026-02-04",
+      "assignedTo": "dev-team-alpha",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-012-before.png",
+        "after": null
+      },
+      "testResult": "pending"
+    },
+    {
+      "id": "NGE-013",
+      "title": "Upsell modal appears behind cart overlay",
+      "description": "Upsell suggestions are hidden when cart sidebar is open",
+      "status": "pending",
+      "priority": "medium",
+      "category": "ui-overlay",
+      "createdDate": "2026-02-05",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-014",
+      "title": "Barcode scanner input duplicated",
+      "description": "Scanning a loyalty card results in double entry",
+      "status": "fixed",
+      "priority": "medium",
+      "category": "hardware",
+      "createdDate": "2026-02-06",
+      "fixedDate": "2026-02-16",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-014-before.png",
+        "after": "screenshots/fixed/NGE-014-after.png"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-015",
+      "title": "Promo code field accepts invalid codes",
+      "description": "Expired promo codes still apply discount",
+      "status": "in-progress",
+      "priority": "medium",
+      "category": "promotions",
+      "createdDate": "2026-02-07",
+      "assignedTo": "dev-team-beta",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-015-before.png",
+        "after": null
+      },
+      "testResult": "failed"
+    },
+    {
+      "id": "NGE-016",
+      "title": "Allergen icons missing on some items",
+      "description": "Items with allergens don't display warning icons consistently",
+      "status": "pending",
+      "priority": "high",
+      "category": "compliance",
+      "createdDate": "2026-02-08",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-017",
+      "title": "Kiosk idle screen not triggering",
+      "description": "Attract mode/idle screen doesn't appear after timeout period",
+      "status": "pending",
+      "priority": "low",
+      "category": "ui",
+      "createdDate": "2026-02-09",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-018",
+      "title": "Refund button not working for managers",
+      "description": "Manager override for refunds shows error dialog",
+      "status": "fixed",
+      "priority": "critical",
+      "category": "pos",
+      "createdDate": "2026-02-10",
+      "fixedDate": "2026-02-17",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-018-before.png",
+        "after": "screenshots/fixed/NGE-018-after.png"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-019",
+      "title": "Kitchen ticket format incorrect",
+      "description": "Special instructions not appearing on kitchen receipt",
+      "status": "in-progress",
+      "priority": "high",
+      "category": "printing",
+      "createdDate": "2026-02-11",
+      "assignedTo": "dev-team-alpha",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-019-before.png",
+        "after": null
+      },
+      "testResult": "pending"
+    },
+    {
+      "id": "NGE-020",
+      "title": "Gift card balance check fails",
+      "description": "Unable to check remaining balance on gift cards",
+      "status": "pending",
+      "priority": "medium",
+      "category": "payment",
+      "createdDate": "2026-02-12",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-021",
+      "title": "Submenu items not scrolling",
+      "description": "Long submenu lists are cut off with no scroll capability",
+      "status": "fixed",
+      "priority": "medium",
+      "category": "ui",
+      "createdDate": "2026-02-13",
+      "fixedDate": "2026-02-16",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-021-before.png",
+        "after": "screenshots/fixed/NGE-021-after.png"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-022",
+      "title": "Sound effects not playing on button press",
+      "description": "Audio feedback missing for touch interactions",
+      "status": "pending",
+      "priority": "low",
+      "category": "audio",
+      "createdDate": "2026-02-14",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-023",
+      "title": "Order number generator duplicates",
+      "description": "Same order number assigned to multiple transactions",
+      "status": "in-progress",
+      "priority": "critical",
+      "category": "order-management",
+      "createdDate": "2026-02-15",
+      "assignedTo": "dev-team-beta",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-023-before.png",
+        "after": null
+      },
+      "testResult": "failed"
+    },
+    {
+      "id": "NGE-024",
+      "title": "Currency symbol wrong for Canadian locations",
+      "description": "US dollar sign shown instead of CAD",
+      "status": "pending",
+      "priority": "medium",
+      "category": "localization",
+      "createdDate": "2026-02-16",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-025",
+      "title": "Offline mode not caching menu data",
+      "description": "Menu unavailable when internet connection is lost",
+      "status": "pending",
+      "priority": "high",
+      "category": "offline",
+      "createdDate": "2026-02-17",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-026",
+      "title": "Tip percentage buttons misaligned",
+      "description": "Tip selection UI appears broken on 1080p screens",
+      "status": "in-progress",
+      "priority": "low",
+      "category": "ui",
+      "createdDate": "2026-02-18",
+      "assignedTo": "ui-team",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-026-before.png",
+        "after": null
+      },
+      "testResult": "pending"
+    },
+    {
+      "id": "NGE-027",
+      "title": "Drink refill indicator missing",
+      "description": "Free refills not marked on eligible beverage items",
+      "status": "pending",
+      "priority": "low",
+      "category": "menu",
+      "createdDate": "2026-02-01",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-028",
+      "title": "Split payment calculation error",
+      "description": "Remaining balance incorrect when using multiple payment methods",
+      "status": "pending",
+      "priority": "high",
+      "category": "payment",
+      "createdDate": "2026-02-02",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-029",
+      "title": "Report export times out",
+      "description": "Daily sales report generation fails for high-volume days",
+      "status": "in-progress",
+      "priority": "medium",
+      "category": "reporting",
+      "createdDate": "2026-02-03",
+      "assignedTo": "backend-team",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-029-before.png",
+        "after": null
+      },
+      "testResult": "pending"
+    },
+    {
+      "id": "NGE-030",
+      "title": "Loyalty points not applying",
+      "description": "Earned points don't auto-apply to eligible orders",
+      "status": "pending",
+      "priority": "medium",
+      "category": "loyalty",
+      "createdDate": "2026-02-04",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-031",
+      "title": "Camera for ID check not activating",
+      "description": "Age verification camera doesn't turn on for alcohol orders",
+      "status": "in-progress",
+      "priority": "critical",
+      "category": "compliance",
+      "createdDate": "2026-02-05",
+      "assignedTo": "hardware-team",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-031-before.png",
+        "after": null
+      },
+      "testResult": "failed"
+    },
+    {
+      "id": "NGE-032",
+      "title": "Custom item entry validation missing",
+      "description": "Negative prices accepted for custom menu items",
+      "status": "fixed",
+      "priority": "medium",
+      "category": "validation",
+      "createdDate": "2026-02-06",
+      "fixedDate": "2026-02-14",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-032-before.png",
+        "after": "screenshots/fixed/NGE-032-after.png"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-033",
+      "title": "Volume control not persistent",
+      "description": "Volume settings reset to max after kiosk restart",
+      "status": "pending",
+      "priority": "low",
+      "category": "settings",
+      "createdDate": "2026-02-07",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-034",
+      "title": "Duplicate order detection not working",
+      "description": "Same card charged twice for identical orders within 5 minutes",
+      "status": "in-progress",
+      "priority": "critical",
+      "category": "payment",
+      "createdDate": "2026-02-08",
+      "assignedTo": "dev-team-alpha",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-034-before.png",
+        "after": null
+      },
+      "testResult": "failed"
+    },
+    {
+      "id": "NGE-035",
+      "title": "Menu search not finding partial matches",
+      "description": "Searching 'chz' doesn't return 'cheese' items",
+      "status": "pending",
+      "priority": "low",
+      "category": "search",
+      "createdDate": "2026-02-09",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-036",
+      "title": "Surcharge not shown until final screen",
+      "description": "Credit card surcharge hidden until payment confirmation",
+      "status": "pending",
+      "priority": "high",
+      "category": "pricing",
+      "createdDate": "2026-02-10",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-037",
+      "title": "Fingerprint reader login failing",
+      "description": "Staff biometric login fails 50% of the time",
+      "status": "in-progress",
+      "priority": "high",
+      "category": "hardware",
+      "createdDate": "2026-02-11",
+      "assignedTo": "hardware-team",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-037-before.png",
+        "after": null
+      },
+      "testResult": "failed"
+    },
+    {
+      "id": "NGE-038",
+      "title": "Combo substitution rules ignored",
+      "description": "Customers can substitute any item regardless of combo rules",
+      "status": "fixed",
+      "priority": "medium",
+      "category": "menu",
+      "createdDate": "2026-02-12",
+      "fixedDate": "2026-02-16",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-038-before.png",
+        "after": "screenshots/fixed/NGE-038-after.png"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-039",
+      "title": "Email validation too strict",
+      "description": "Valid emails with '+' rejected as invalid",
+      "status": "pending",
+      "priority": "low",
+      "category": "validation",
+      "createdDate": "2026-02-13",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-040",
+      "title": "Order cancellation not syncing to kitchen",
+      "description": "Cancelled orders still print to kitchen printer",
+      "status": "in-progress",
+      "priority": "critical",
+      "category": "order-management",
+      "createdDate": "2026-02-14",
+      "assignedTo": "dev-team-beta",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-040-before.png",
+        "after": null
+      },
+      "testResult": "failed"
+    },
+    {
+      "id": "NGE-041",
+      "title": "Discount stacking allows over-discounting",
+      "description": "Multiple promo codes can make order total negative",
+      "status": "fixed",
+      "priority": "critical",
+      "category": "pricing",
+      "createdDate": "2026-02-15",
+      "fixedDate": "2026-02-17",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-041-before.png",
+        "after": "screenshots/fixed/NGE-041-after.png"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-042",
+      "title": "Inventory check not preventing sales",
+      "description": "Out-of-stock items still available for ordering",
+      "status": "pending",
+      "priority": "high",
+      "category": "inventory",
+      "createdDate": "2026-02-16",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-043",
+      "title": "Tax exemption form not saving",
+      "description": "Tax-free certificate upload fails silently",
+      "status": "pending",
+      "priority": "medium",
+      "category": "compliance",
+      "createdDate": "2026-02-17",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-044",
+      "title": "Screen calibration drifting",
+      "description": "Touch accuracy degrades over time requiring recalibration",
+      "status": "in-progress",
+      "priority": "medium",
+      "category": "hardware",
+      "createdDate": "2026-02-18",
+      "assignedTo": "hardware-team",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-044-before.png",
+        "after": null
+      },
+      "testResult": "pending"
+    },
+    {
+      "id": "NGE-045",
+      "title": "Modifier dependency rules not enforced",
+      "description": "Incompatible modifiers can be selected together",
+      "status": "pending",
+      "priority": "medium",
+      "category": "modifiers",
+      "createdDate": "2026-01-20",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-046",
+      "title": "Kitchen display timeout too short",
+      "description": "Orders disappear from KDS before being prepared",
+      "status": "pending",
+      "priority": "high",
+      "category": "kds",
+      "createdDate": "2026-01-22",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-047",
+      "title": "Happy hour pricing not time-zone aware",
+      "description": "Discount applies at wrong times in different time zones",
+      "status": "pending",
+      "priority": "medium",
+      "category": "pricing",
+      "createdDate": "2026-01-25",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-048",
+      "title": "Customer survey not submitting",
+      "description": "Post-order survey responses return 500 error",
+      "status": "in-progress",
+      "priority": "low",
+      "category": "feedback",
+      "createdDate": "2026-01-28",
+      "assignedTo": "backend-team",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-048-before.png",
+        "after": null
+      },
+      "testResult": "pending"
+    },
+    {
+      "id": "NGE-049",
+      "title": "Scheduled maintenance mode not triggering",
+      "description": "Kiosk remains active during configured maintenance windows",
+      "status": "pending",
+      "priority": "medium",
+      "category": "operations",
+      "createdDate": "2026-01-30",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-050",
+      "title": "Gift receipt option missing",
+      "description": "No option to print gift receipt without prices",
+      "status": "pending",
+      "priority": "low",
+      "category": "printing",
+      "createdDate": "2026-02-01",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-051",
+      "title": "NFC payment double-tap required",
+      "description": "Apple Pay/Google Pay require multiple attempts",
+      "status": "in-progress",
+      "priority": "high",
+      "category": "payment",
+      "createdDate": "2026-02-02",
+      "assignedTo": "hardware-team",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-051-before.png",
+        "after": null
+      },
+      "testResult": "failed"
+    },
+    {
+      "id": "NGE-052",
+      "title": "Menu scheduling doesn't refresh without reboot",
+      "description": "Breakfast menu stays active after switch time",
+      "status": "fixed",
+      "priority": "medium",
+      "category": "menu",
+      "createdDate": "2026-02-03",
+      "fixedDate": "2026-02-15",
+      "screenshots": {
+        "before": "screenshots/fixed/NGE-052-before.png",
+        "after": "screenshots/fixed/NGE-052-after.png"
+      },
+      "testResult": "passed"
+    },
+    {
+      "id": "NGE-053",
+      "title": "QR code for mobile payment too small",
+      "description": "Pay-by-QR option difficult to scan",
+      "status": "pending",
+      "priority": "medium",
+      "category": "payment",
+      "createdDate": "2026-02-04",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    },
+    {
+      "id": "NGE-054",
+      "title": "Staff override PIN visible on screen",
+      "description": "Manager PIN entry shows digits instead of dots",
+      "status": "in-progress",
+      "priority": "critical",
+      "category": "security",
+      "createdDate": "2026-02-05",
+      "assignedTo": "dev-team-alpha",
+      "screenshots": {
+        "before": "screenshots/in-progress/NGE-054-before.png",
+        "after": null
+      },
+      "testResult": "failed"
+    },
+    {
+      "id": "NGE-055",
+      "title": "Order total mismatch between kiosk and receipt",
+      "description": "Rounding differences cause 1¢ discrepancies",
+      "status": "pending",
+      "priority": "medium",
+      "category": "pricing",
+      "createdDate": "2026-02-06",
+      "screenshots": {
+        "before": null,
+        "after": null
+      },
+      "testResult": "not-tested"
+    }
+  ]
+}

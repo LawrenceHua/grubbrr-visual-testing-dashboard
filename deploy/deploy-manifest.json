@@ -1,0 +1,17 @@
+{
+  "deployment": {
+    "timestamp": "2026-02-18T12:37:50Z",
+    "environment": "prod",
+    "site_name": "GRUBBRR Visual Testing Dashboard",
+    "version": "20260218-073751",
+    "files": [
+      "index.html",
+      "css/styles.css",
+      "js/dashboard.js",
+      "bugs-data.json"
+    ],
+    "screenshots_directory": "screenshots/",
+    "total_bugs": 55,
+    "auto_refresh": 30
+  }
+}

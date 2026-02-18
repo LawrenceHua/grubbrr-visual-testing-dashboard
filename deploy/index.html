@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRUBBRR Visual Testing Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div>
+        <h1>GRUBBRR NGE Visual Testing</h1>
+        <div class="header-meta">
+          <span><span class="live-indicator"></span>Live Dashboard</span>
+          <span>Auto-refresh: 30s</span>
+          <span id="current-time"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stats-content">
+      <div class="stat-item">
+        <span class="stat-value fixed" id="stat-fixed">0</span>
+        <span class="stat-label">Fixed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value in-progress" id="stat-in-progress">0</span>
+        <span class="stat-label">In Progress</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value pending" id="stat-pending">0</span>
+        <span class="stat-label">Pending</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value failed" id="stat-failed">0</span>
+        <span class="stat-label">Failed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value success-rate" id="stat-success-rate">0%</span>
+        <span class="stat-label">Success Rate</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Environment Info -->
+    <div class="env-info">
+      <div class="env-info-item">
+        <span class="env-info-label">Test Environment</span>
+        <span class="env-info-value" id="env-url">Loading...</span>
+      </div>
+      <div class="env-info-item">
+        <span class="env-info-label">Access Code</span>
+        <span class="env-info-value access-code" id="env-access-code">Loading...</span>
+      </div>
+      <div class="env-info-item">
+        <span class="env-info-label">Kiosk ID</span>
+        <span class="env-info-value" id="env-kiosk-id">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Automation Status -->
+    <div class="automation-status" id="automation-status">
+      <div class="status-indicator">
+        <span class="status-dot idle" id="status-dot"></span>
+        <span id="status-text">Idle</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-bar" style="width: 0%"></div>
+      </div>
+      <div class="automation-metrics">
+        <div>
+          <span class="env-info-label">Last Run</span>
+          <div class="env-info-value" id="last-run">Loading...</div>
+        </div>
+        <div>
+          <span class="env-info-label">Tests Passed</span>
+          <div class="env-info-value" id="tests-passed">Loading...</div>
+        </div>
+        <div>
+          <span class="env-info-label">Tests Failed</span>
+          <div class="env-info-value" id="tests-failed">Loading...</div>
+        </div>
+        <div>
+          <span class="env-info-label">Next Run</span>
+          <div class="env-info-value" id="next-run">Loading...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters-section">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">All Bugs</button>
+        <button class="filter-btn" data-filter="fixed">Fixed</button>
+        <button class="filter-btn" data-filter="in-progress">In Progress</button>
+        <button class="filter-btn" data-filter="pending">Pending</button>
+      </div>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search bugs..." />
+      </div>
+    </div>
+
+    <!-- Bug Grid -->
+    <div class="bug-grid" id="bug-grid">
+      <div class="loading">
+        <div class="loading-spinner"></div>
+        <p>Loading bug data...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close">✕</button>
+      <img id="lightbox-img" src="" alt="">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>GRUBBRR NGE Visual Testing Dashboard | Last updated: <span id="footer-timestamp"></span></p>
+  </footer>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
